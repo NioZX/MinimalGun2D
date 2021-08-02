@@ -1,3 +1,44 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/enemy/idle1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/enemy/idle2.png" type="Texture" id=2]
+[ext_resource path="res://Enemy.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( -44.7272, -19.2437, 494.975, -23.7055, 408.558, 419.962, 20.1262, 342.454 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -44.7272, -19.2437, 494.975, -23.7055, 408.558, 419.962, 20.1262, 342.454 ) ]
 
 [node name="Enemy" type="RigidBody2D"]
+position = Vector2( 47.7986, 27.8443 )
+gravity_scale = 0.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="."]
