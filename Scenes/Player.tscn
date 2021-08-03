@@ -5,6 +5,9 @@
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 player = NodePath(".")
 camera = NodePath("Camera2D")
 
@@ -12,6 +15,7 @@ camera = NodePath("Camera2D")
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
+frame = 16
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
