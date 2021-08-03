@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GameJaaj/Sprite Shit.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 player = NodePath(".")
 camera = NodePath("Camera2D")
@@ -16,7 +15,3 @@ vframes = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 241, -26 )
-texture = ExtResource( 3 )
