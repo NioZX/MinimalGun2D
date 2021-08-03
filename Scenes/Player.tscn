@@ -1,29 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GameJaaj/Sprite Shit.png" type="Texture" id=1]
-[ext_resource path="res://RigidBody2D.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
-[sub_resource type="PhysicsMaterial" id=1]
-rough = true
-
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 6.9836
-height = 8.38947
-
-[node name="RigidBody2D" type="RigidBody2D"]
-mass = 3.0
-physics_material_override = SubResource( 1 )
-gravity_scale = 0.0
+[node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+player = NodePath(".")
+camera = NodePath("Camera2D")
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource( 2 )
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 241, -26 )
+texture = ExtResource( 3 )
