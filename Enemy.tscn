@@ -15,19 +15,15 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 [sub_resource type="NavigationPolygon" id=3]
-vertices = PoolVector2Array( -44.7272, -19.2437, 494.975, -23.7055, 408.558, 419.962, 20.1262, 342.454 )
+vertices = PoolVector2Array( 4.70929, 9.32294, 309.835, 10.3824, 311.885, 175.526, 6.82822, 175.659 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-outlines = [ PoolVector2Array( -44.7272, -19.2437, 494.975, -23.7055, 408.558, 419.962, 20.1262, 342.454 ) ]
+outlines = [ PoolVector2Array( 4.70929, 9.32294, 309.835, 10.3824, 311.885, 175.526, 6.82822, 175.659 ) ]
 
-[node name="Enemy" type="RigidBody2D"]
-position = Vector2( 47.7986, 27.8443 )
-gravity_scale = 0.0
+[node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 474.469, 161.927 )
 frames = SubResource( 1 )
 animation = "idle"
 frame = 2
