@@ -23,7 +23,6 @@ outlines = [ PoolVector2Array( 4.70929, 9.32294, 309.835, 10.3824, 311.885, 175.
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 474.469, 161.927 )
 frames = SubResource( 1 )
 animation = "idle"
 frame = 2
@@ -38,3 +37,4 @@ shape = SubResource( 2 )
 navpoly = SubResource( 3 )
 
 [node name="Line2D" type="Line2D" parent="."]
+width = 5.0
